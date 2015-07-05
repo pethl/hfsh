@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  headline: MyText
+  leadtext: MyText
   display: false
 
 two:
-  headline: MyText
+  leadtext: MyText
   display: false

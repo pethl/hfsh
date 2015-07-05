@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :news
+  resources :headlines
   resources :calendars
   
   resources :home
