@@ -28,11 +28,4 @@ ActiveRecord::Schema.define(version: 20150705215631) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "news", force: :cascade do |t|
-    t.text     "headline"
-    t.boolean  "display"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
 end
