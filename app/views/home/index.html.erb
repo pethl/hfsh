@@ -5,7 +5,7 @@
     
     <div class="intro-content">
         <img src="assets/logo/HF-Logo-Lndscape.jpg" class="img-responsive img-centered" alt="">
-        <div class="brand-name-subtext"><a><br>Current news item<a></div>
+        <div class="brand-name-subtext"><a><br><%= @headlines[0].leadtext %><a></div>
       </div> 
    
         <div class="scroll-down">
@@ -356,6 +356,7 @@
     <a href="http://www.amazon.co.uk/Bulls-Eye-BBQ-Sauce-Hickory-Smoke/dp/B000612XM6/ref=sr_1_1?ie=UTF8&qid=1436016681&sr=8-1&keywords=bbq+sauce" class="btn btn-block btn-full-width">Shop Hang Fire Smokehouse now!</a>
     <footer class="footer" style="background-image: url('assets/background/bg-footer.jpg')">
         <div class="container text-center">
+         <section id="contact">
             <div class="row">
                 <div class="col-md-4 contact-details">
                     <h4><i class="fa fa-phone"></i> Call</h4>
@@ -389,6 +390,7 @@
                 </div>
             </div>
         </div>
+        </section>
     </footer>
     <!-- Core Scripts -->
     <script src="assets/javascripts/jquery.js"></script>
