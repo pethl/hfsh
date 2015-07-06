@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require vitality
-//= require bootstrap.js		
+//= require bootstrap.js
+//= require best_in_place		
 //= require_tree .

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705215631) do
+ActiveRecord::Schema.define(version: 20150706155007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20150705215631) do
 
   create_table "headlines", force: :cascade do |t|
     t.text     "leadtext"
+    t.boolean  "display"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "url"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.text     "headline"
     t.boolean  "display"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

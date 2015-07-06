@@ -5,4 +5,4 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Headline.create(leadtext: '2015 BBC Farming Awards - Winner Best Street Food', display: true)
+Headline.create(leadtext: 'WINNERS: BBC Food and Farming Awards 2015 - Best Street Food or Takeaway', display: true)

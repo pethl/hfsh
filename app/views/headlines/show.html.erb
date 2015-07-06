@@ -1,8 +1,19 @@
+<div class="container">
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+<br><br>
+<br><br>
+<br><br>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Leadtext:</strong>
   <%= @headline.leadtext %>
+</p>
+
+<p>
+  <strong>Url</strong>
+  <%= @headline.url %>
 </p>
 
 <p>
@@ -12,3 +23,6 @@
 
 <%= link_to 'Edit', edit_headline_path(@headline) %> |
 <%= link_to 'Back', headlines_path %>
+</div>
+</div>
+</div>

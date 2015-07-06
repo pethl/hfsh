@@ -1,2 +1,5 @@
 module HeadlinesHelper
+  
+
+  
 end

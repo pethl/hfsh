@@ -43,10 +43,10 @@ class HeadlinesController < ApplicationController
     respond_to do |format|
       if @headline.update(headline_params)
         format.html { redirect_to @headline, notice: 'Headline was successfully updated.' }
-        format.json { render :show, status: :ok, location: @headline }
+        format.json { respond_with_bip(@headline) }
       else
         format.html { render :edit }
-        format.json { render json: @headline.errors, status: :unprocessable_entity }
+         format.json { respond_with_bip(@headline) }
       end
     end
   end
@@ -69,6 +69,6 @@ class HeadlinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def headline_params
-      params.require(:headline).permit(:leadtext, :display)
+      params.require(:headline).permit(:leadtext, :display, :url)
     end
 end

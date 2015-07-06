@@ -5,5 +5,4 @@ class HomeController < ApplicationController
     @headlines = Headline.where(:display => true)
   end
 
-
 end
