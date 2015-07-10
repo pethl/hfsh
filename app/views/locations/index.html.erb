@@ -1,11 +1,17 @@
+<div class="container">
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+<br><br>
+<br><br>
+<br><br>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Locations</h1>
+<h1>All Locations</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+     <th>Name</th>
       <th>Start date</th>
       <th>End date</th>
       <th>Comments</th>
@@ -23,7 +29,7 @@
         <td><%= location.end_date %></td>
         <td><%= location.comments %></td>
         <td><%= location.address %></td>
-        <td><%= location.active %></td>
+        <td><center><i><%= best_in_place location, :active, :type => :checkbox, :nil => "?" %></i></center></td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -35,3 +41,6 @@
 <br>
 
 <%= link_to 'New Location', new_location_path %>
+</div>
+</div>
+</div>
