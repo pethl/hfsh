@@ -15,5 +15,5 @@
 //= require turbolinks
 //= require vitality
 //= require bootstrap.js
-//= require best_in_place		
+//= require best_in_place	
 //= require_tree .
