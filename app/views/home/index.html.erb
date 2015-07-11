@@ -1,7 +1,7 @@
 <body id="page-top" class="modern">
 
     <!-- Instructions: Set your background image using the URL below. -->
-    <header style="background-image: url('assets/xx/ribs-header.jpg')">
+    <header>
     
     <div class="intro-content">
         <img src="assets/logo/HF-Logo-Lndscape.jpg" class="img-responsive img-centered" alt="">
@@ -139,7 +139,7 @@
 
 <section id="where" class="services">
 
-<div class="container">
+<div class="container bg-gray">
     <div class="row text-center">
         <div class="col-lg-12 wow fadeIn">
             <h2>where to find us</h2>
@@ -159,22 +159,25 @@
 
               <tbody>
                 <% @locations.each do |location| %>
-                 <% if location.start_date > Date.today%>
-                   <TR BGCOLOR="#CCCC99">
-                    <td></td>
-                   <% else %>
-                    <TR BGCOLOR="#FFFFFF">
-                    <td><i>Finished</i></td>
+                 <% if location.end_date < Date.today%>
+                   <TR BGCOLOR="#CC9933 ">
+                   <td><i>Event<br>Finished</i></td>
+                   <% elsif location.start_date < Date.today && location.end_date > Date.today%>
+                   <TR BGCOLOR="#FFFFFF">
+                    <td><i><strong>Current<br>Event</i></strong></td>
+                    <% else location.start_date > Date.today %>
+                     <TR BGCOLOR="#FFFFFF">
+                    <td><i>Future<br>Event</i></td>
                   <% end %>
             
                     <td align="left">
                     <% if location.start_date == location.end_date%>
-                      <%= location.start_date %>
+                      <%= location.start_date.strftime("%d/%b/%y") %>
                       <% else %>
-                       <%= location.start_date %> until <br><%= location.end_date %>
+                       <%= location.start_date.strftime("%d/%b/%y") %> until <br><%= location.end_date.strftime("%d/%b/%y") %>
                      <% end %>
                      </td>
-                     <td align="left"><strong><%= location.name %></strong><br><%= location.address %></td>
+                     <td align="left" ><strong><%= location.name %></strong><br><%= location.address %></td>
                     <td align="left"><%= location.comments %></td>
                     <td></td>
                     </tr>
@@ -330,43 +333,47 @@
     
     <a href="http://www.amazon.co.uk/Bulls-Eye-BBQ-Sauce-Hickory-Smoke/dp/B000612XM6/ref=sr_1_1?ie=UTF8&qid=1436016681&sr=8-1&keywords=bbq+sauce" class="btn btn-block btn-full-width">Shop Hang Fire Smokehouse now!</a>
     <footer class="footer" style="background-image: url('assets/background/night_sign.jpg')">
+       
         <div class="container text-center">
          <section id="contact">
             <div class="row">
                 <div class="col-md-4 contact-details">
+                    
+                <ul class="list-inline">
+                    <li><a href="https://www.facebook.com/pages/Hang-Fire-Smokehouse/203591489778567"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+                    </li>
+                    <li><a href="https://twitter.com/hangfirebbq"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+                    </li>
+                    <li><a href="http://instagram.com/hangfirebbq"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
+                    </li>
+                    <li><a href="https://www.youtube.com/channel/UCM6UYsYUvLAzFZp7M4hCWWg"><i class="fa fa-youtube fa-fw fa-2x"></i></a>
+                    </li>
+                </ul>
+                <br>
+       
                     <h4><i class="fa fa-phone"></i> Call</h4>
-                    <p>02902-999-999</p>
-                </div>
-                <div class="col-md-4 contact-details">
+                      <p>02902-999-999</p>
+                      <br>
+       
                     <h4><i class="fa fa-map-marker"></i> Visit</h4>
-                    <p>Hang Fire Smokehouse
-                        <br>The Butchers Shop<br> Llantwit Major
-						<br>Wales</p>
-                </div>
-                <div class="col-md-4 contact-details">
+                      <p>Hang Fire Smokehouse
+                      <br>The Butchers Shop<br> Llantwit Major
+						          <br>Wales</p>
+                      <br>
+                    
                     <h4><i class="fa fa-envelope"></i> Email</h4>
-                    <p><a href="mailto:mail@example.com">hangfire@google.com</a>
-                    </p>
+                      <p><a href="mailto:mail@example.com">hangfire@google.com</a>
+                      </p>
+                      <br>
                 </div>
-            </div>
-            <div class="row social">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li><a href="https://www.facebook.com/pages/Hang-Fire-Smokehouse/203591489778567"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
-                        </li>
-                        <li><a href="https://twitter.com/hangfirebbq"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+             
             <div class="row copyright">
                 <div class="col-lg-12">
-                    <p class="small">&copy; 2015 Start Bootstrap Themes</p>
+                    <p class="small">&copy; 2015 Start Bootstrap Themes/Hang Fire Smokehouse</p>
                 </div>
             </div>
         </div>
         </section>
     </footer>
-   
   
 </body>
