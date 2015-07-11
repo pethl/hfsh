@@ -11,9 +11,12 @@
  * file per style scope.
  *
  *= require_tree .
+ @import 'layout/body'
  @import font-awesome/css/*
  @import font-awesome/fonts/*
  @import font-awesome/less/*
  @import owl-carousel/*
+ @import "bootstrap-sprockets"
+ @import "bootstrap"
  @import vitality-tan.css
  */

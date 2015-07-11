@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'twitter'
 gem 'best_in_place', github: 'bernat/best_in_place'
+gem 'bootstrap-sass', '~> 3.2.0'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
