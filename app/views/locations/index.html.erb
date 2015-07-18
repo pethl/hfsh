@@ -6,16 +6,16 @@
 <br><br>
 <p id="notice"><%= notice %></p>
 
-<h1>All Locations</h1>
+<h1>Locations</h1>
 
-<table>
+<table class="table ">
   <thead>
     <tr>
      <th>Name</th>
-      <th>Start date</th>
-      <th>End date</th>
+      <th>Start / End </th>
       <th>Comments</th>
       <th>Address</th>
+      <th>Url</th>
       <th>Active</th>
       <th colspan="3"></th>
     </tr>
@@ -25,10 +25,10 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.name %></td>
-        <td><%= location.start_date %></td>
-        <td><%= location.end_date %></td>
+        <td><%= location.start_date %> - <%= location.end_date %></td>
         <td><%= location.comments %></td>
         <td><%= location.address %></td>
+        <td><%= location.url %></td>
         <td><center><i><%= best_in_place location, :active, :type => :checkbox, :nil => "?" %></i></center></td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>

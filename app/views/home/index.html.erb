@@ -1,3 +1,4 @@
+
 <body id="page-top" class="modern">
 
     <!-- Instructions: Set your background image using the URL below. -->
@@ -24,7 +25,7 @@
         </div>
    </header>
     
-
+  <!-- Instructions: This is the aside. -->
     <aside class="cta-quote" style="background-image: url('/assets/background/ribs-header.jpg');">
 
         <div class="container wow fadeIn">
@@ -39,12 +40,12 @@
     </aside>
     
     
-    
+    <!-- Instructions: This is the OUR BBQ section. -->  
     <section id="what" class="services bg-gray">
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-12 wow fadeIn">
-                <h2>SLOW 'N' LOW</h2>
+                <h2>OUR BBQ</h2>
                 <hr class="colored">
                 <p>At Hang Fire Somehouse we smoke the finest meat we can get our hands on, in the best traditions of American barbecue.
                 We are passionate about provenance, for example, we use free range pork from a farm local to us in the Vale of Glamorgan.
@@ -63,13 +64,22 @@
                     <div class="media-body">
                         <h3 class="media-heading">Meat</h3>
                         <ul>
-                            <li><em>Fresh, local ingredients</em>
+                            <li><em>Authentic BBQ cuts</em>
+                            </li>
+                            <li><em>Smoked slow'n'low</em>
                             </li>
                             <li><em>Complex flavor profiles</em>
                             </li>
-                            <li><em>Authentic BBQ meat cuts</em>
-                            </li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 wow fadeIn" data-wow-delay=".4s">
+                <div class="media">
+                    
+                    <div class="media-body">
+                        <h3 class="media-heading">  <%= image_tag("gallery/chicken.jpg", size: "300x200") %> </h3>
+                       
                     </div>
                 </div>
             </div>
@@ -85,26 +95,8 @@
                             </li>
                             <li><em>Only indirect heat</em>
                             </li>
-                            <li><em>Unrivalled portions</em>
+                            <li><em>???</em>
                             </li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 wow fadeIn" data-wow-delay=".6s">
-                <div class="media">
-                    <div class="pull-left">
-                        <i class="fa fa-users"></i>
-                    </div>
-                    <div class="media-body">
-                        <h3 class="media-heading">Friends</h3>
-                        <ul>
-                            <li><em>Street food and festivals</em>
-                            </li>
-                            <li><em>Running bbq lover events</em>
-                            </li>
-                            <li><em>Active social network</em>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -113,6 +105,95 @@
     </div>
 </section>
 
+<!-- Instructions: This is the WHERE section. -->  
+<section id="where" class="testimonials" style="background-image: url('assets/background/bluesky.jpg')">
+ <div class="container wow fadeIn">
+
+    <div class="row text-center">
+        <div class="col-lg-12 wow fadeIn">
+            <h2>where to find us</h2>
+            <hr class="colored">
+            <div class="container">
+            <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th><p>When</p></th>
+                  <th><p>Where</p></th>
+                  <th><p>Details</p></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @locations.each do |location| %>
+                 <% if location.end_date < Date.today%>
+                   <TR BGCOLOR="#B0B0B0 ">
+                   <td><i>Event<br>Finished</i></td>
+                   <% elsif (location.start_date == Date.today) || (location.start_date < Date.today && location.end_date > Date.today) %>
+                   <TR BGCOLOR="orange">
+                    <td><i><strong>Current<br>Event</i></strong></td>
+                    <% else location.start_date > Date.today %>
+                     <TR BGCOLOR="#FFFFFF">
+                    <td><i>Future<br>Event</i></td>
+                  <% end %>
+            
+                    <td align="left">
+                    <% if location.start_date == location.end_date%>
+                      <%= location.start_date.strftime("%d/%b/%y") %>
+                      <% else %>
+                       <%= location.start_date.strftime("%d/%b/%y") %> until <br><%= location.end_date.strftime("%d/%b/%y") %>
+                     <% end %>
+                     </td>
+                     <td align="left" ><strong><%= location.name %></strong><br><%= location.address %></td>
+                    <td align="left"><%= location.comments %>
+                    <br>
+                   <% if location.url.blank? %>
+                     <% else %>
+                    
+                    <%= link_to location.url, location.url, :target => "_blank"  %>
+                    <% end %></td>
+                    <td></td>
+                    </tr>
+                <% end %>
+              </tbody>
+            </table>
+            </div>
+        </div>
+        </div>
+            
+            </div>
+        </div>
+        </div>
+</section>
+
+ <!-- Instructions: This is the WHO section. -->  
+<section id="people" class="bg-gray">
+     <div class="container text-center wow fadeIn">
+         <div class="row">
+             <div class="col-lg-12">
+                 <h2>Sam & Shauna</h2>
+                 <p>Samantha Evans and Shauna Guinn traveled to America in 2012 – 2013 on a roadtrip of epic proportions to find out ‘what exactly is american barbecue?’. Their mission was to attend masterclasses, listen to pearls of wisdom from backyard and competition ‘cuers’ alike and try as much barbecue as possible.</p>
+                 <hr class="colored">
+             </div>
+         </div>
+         <div class="row">
+             <div class="col-md-4 col-md-offset-4">
+             <div align="center">
+         
+                 <%= image_tag("sam_shauna.jpg", size: "300x200") %></div>       
+         
+             </div></div>
+                 <hr class="colored">
+                 <p><em>Hang Fire Smokehouse Founders</em></p>
+         </div>
+         </div>
+     </div>
+ </section>
+
+
+<!-- Instructions: This is the GALLERY section. -->  
 <section id="gallery">
     <div class="container wow fadeIn">
         <div class="row text-center">
@@ -138,62 +219,8 @@
         </div>
 </section>
 
-<section id="where" class="services">
 
-<div class="container-fluid bg-gray">
-    <div class="row text-center">
-        <div class="col-lg-12 wow fadeIn">
-            <h2>where to find us</h2>
-            <hr class="colored">
-            <div class="container">
-            <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th><p>When</p></th>
-                  <th><p>Where</p></th>
-                  <th><p>Details</p></th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @locations.each do |location| %>
-                 <% if location.end_date < Date.today%>
-                   <TR BGCOLOR="#CC9933 ">
-                   <td><i>Event<br>Finished</i></td>
-                   <% elsif location.start_date < Date.today && location.end_date > Date.today%>
-                   <TR BGCOLOR="#FFFFFF">
-                    <td><i><strong>Current<br>Event</i></strong></td>
-                    <% else location.start_date > Date.today %>
-                     <TR BGCOLOR="#FFFFFF">
-                    <td><i>Future<br>Event</i></td>
-                  <% end %>
-            
-                    <td align="left">
-                    <% if location.start_date == location.end_date%>
-                      <%= location.start_date.strftime("%d/%b/%y") %>
-                      <% else %>
-                       <%= location.start_date.strftime("%d/%b/%y") %> until <br><%= location.end_date.strftime("%d/%b/%y") %>
-                     <% end %>
-                     </td>
-                     <td align="left" ><strong><%= location.name %></strong><br><%= location.address %></td>
-                    <td align="left"><%= location.comments %></td>
-                    <td></td>
-                    </tr>
-                <% end %>
-              </tbody>
-            </table>
-            </div>
-        </div>
-        </div>
-            
-            </div>
-        </div>
-        </div>
-</section>
-
+<!-- Instructions: This is the SUBSCRIBE TO EMAIL section. -->  
 <section class="cta-form bg-dark">
     <div class="container text-center">
         <h3>Subscribe to our newsletter!</h3>
@@ -222,7 +249,8 @@
     </div>
 </section>
 
-    <section id="press" class="testimonials bg-gray">
+<!-- Instructions: This is the TWITTER section. -->  
+    <section id="twitter" class="testimonials bg-gray">
         <div class="container wow fadeIn">
             <div class="row">
                 <div class="col-lg-12">
@@ -237,6 +265,7 @@
     </section>
 
  
+    <!-- Instructions: This is the SHOP section. -->  
     <section id="shop" class="pricing" style="background-image: url('assets/products/3set_bluesky_big.jpg')">
         <div class="container wow fadeIn">
             <div class="row text-center">
@@ -308,30 +337,52 @@
     </section>
     
     
-   <section id="people" class="bg-gray">
-        <div class="container text-center wow fadeIn">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Sam & Shauna</h2>
-                    <p>Samantha Evans and Shauna Guinn traveled to America in 2012 – 2013 on a roadtrip of epic proportions to find out ‘what exactly is american barbecue?’. Their mission was to attend masterclasses, listen to pearls of wisdom from backyard and competition ‘cuers’ alike and try as much barbecue as possible.</p>
-                    <hr class="colored">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4">
-                <div align="center">
-            
-                    <%= image_tag("sam_shauna.jpg", size: "300x200") %></div>       
-            
-                </div></div>
-                    <hr class="colored">
-                    <p><em>Hang Fire Smokehouse Founders</em></p>
-            </div>
-            </div>
-        </div>
-    </section>
-       
+      
+    <!-- Instructions: This is the PRESS section. -->  
+    <section id="press" class="services">
+    <div class="container-fluid text-center">
+    <h2>Press</h2>
+    <hr class="colored">
     
+        <div class="row">
+        <div class="col-md-3 col-md-offset-2 wow fadeIn">
+          <h3>PRESS CONTACT</h3><br>
+          <a>Please only use the contact details below if you are press looking to get in touch with Hang Fire Smokehouse.</a>
+          <br><br>
+         <h4> Vicki Spencer-Francis</h4>
+         <p><a href="http://wearecowshed.co.uk" target="_blank">Cowshed Communication</a></p>
+       
+          <br>
+          <h4><i class="fa fa-phone"></i> Phone</h4>
+          <p><a>02920 351 505</a>
+          </p>
+          <h4><i class="fa fa-envelope"></i> Email</h4>
+          <p><a href="mailto:mail@example.com">vicki@wearecowshed.co.uk</a>
+          </p>
+          <h4><i class="fa fa-twitter"></i> Twitter</h4>
+            <p><a href="https://twitter.com/wearecowshed">@wearecowshed</a>
+          </p>
+          <br>    
+        </div>
+       
+        
+        <div class="col-md-5">
+          <h3>PRESS RELEASES</h3><br>
+               <table class="table">
+               <% @pressreleases.each do |pressrelease| %>
+               <tr>
+               <td><%= pressrelease.created_at.strftime("%d/%m/%y") %></td>
+               <td  align="left"><%= link_to pressrelease.filename, pressrelease %></td>
+               </tr>
+              
+                 <% end %>
+               </table>
+          </div>
+          </div>
+    </div>
+    </section>   
+  
+    <!-- Instructions: This is the CONTACT section. -->  
     <a href="http://www.amazon.co.uk/Bulls-Eye-BBQ-Sauce-Hickory-Smoke/dp/B000612XM6/ref=sr_1_1?ie=UTF8&qid=1436016681&sr=8-1&keywords=bbq+sauce" class="btn btn-block btn-full-width">Shop Hang Fire Smokehouse now!</a>
     <footer class="footer" style="background-image: url('assets/background/night_sign.jpg')">
        
@@ -352,15 +403,8 @@
                 </ul>
                 <br>
        
-                    <h4><i class="fa fa-phone"></i> Call</h4>
-                      <p>02902-999-999</p>
-                      <br>
-       
-                    <h4><i class="fa fa-map-marker"></i> Visit</h4>
-                      <p>Hang Fire Smokehouse
-                      <br>The Butchers Shop<br> Llantwit Major
-						          <br>Wales</p>
-                      <br>
+                   <a>We specialise in kitchen takeovers and street food. If you’d like to know where we are next, check out the ‘WHERE’ section of this website. However, if you want to get in touch, drop us a line using the contact form below, and we’ll get back to you quicker than it takes to smoke a brisket!
+                   <br>Please note, we do not have a restaurant, and therefore cannot take table bookings.</a>
                     
                     <h4><i class="fa fa-envelope"></i> Email</h4>
                       <p><a href="mailto:mail@example.com">hangfire@google.com</a>

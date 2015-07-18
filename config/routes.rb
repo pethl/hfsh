@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pressreleases
   resources :locations
   resources :headlines
   resources :calendars

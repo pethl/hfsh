@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
+<br><br>
+<br><br>
+<br><br>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filename:</strong>
+  <%= @pressrelease.filename %>
+</p>
+
+<p>
+  <strong>Content type:</strong>
+  <%= @pressrelease.content_type %>
+</p>
+
+<p>
+  <strong>File contents:</strong>
+  <%= @pressrelease.file_contents %>
+</p>
+
+<%= link_to 'Edit', edit_pressrelease_path(@pressrelease) %> |
+<%= link_to 'Back', pressreleases_path %>
+</div>
+</div>
+</div>
+
