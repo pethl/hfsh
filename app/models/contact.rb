@@ -1,3 +1,5 @@
+require 'active_resource'
+
 class Contact < MailForm::Base
     
   attribute :name,      :validate => true
