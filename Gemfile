@@ -58,7 +58,7 @@ group :development, :test do
   # attempting to set up contact us form see
   # https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form
 
-  gem "mail_form", ">= 1.3.0"
+  gem 'mail_form'
   
 end
 
