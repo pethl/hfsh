@@ -45,11 +45,19 @@ gem 'rails_12factor'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # for managing .env local environment variables for mailer
+  gem 'foreman'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  # attempting to set up contact us form see
+  # https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form/
+  gem 'mail_form'
+  gem 'simple_form'
+  
 end
 
