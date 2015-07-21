@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
+gem 'activeresource', require: 'active_resource'
 
 #Use pg database
 gem 'pg', '0.17.1'
@@ -56,7 +57,7 @@ group :development, :test do
   
   # attempting to set up contact us form see
   # https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form
-  gem 'simple_form'
+
   gem "mail_form", ">= 1.3.0"
   
 end
