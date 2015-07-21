@@ -37,6 +37,8 @@ gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'rails_12factor'
 
+gem 'mail_form'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -57,8 +59,6 @@ group :development, :test do
   
   # attempting to set up contact us form see
   # https://rubyonrailshelp.wordpress.com/2014/01/08/rails-4-simple-form-and-mail-form-to-make-contact-form
-
-  gem 'mail_form'
   
 end
 
