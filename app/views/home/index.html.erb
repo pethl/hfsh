@@ -1,28 +1,58 @@
 
 <body id="page-top" class="modern">
+<header>
 
-    <!-- Instructions: Set your background image using the URL below. -->
-    <header>
-    
-    <div class="intro-content">
-        <img src="assets/logo/HF-Logo-Lndscape.jpg" class="img-responsive img-centered" alt="">
-       
-        <div class="brand-name-subtext">
+<div class="container">
+    <div class="col-lg-12" >
+  
+  <!-- Header: Centre Panel for logo. -->
+        <div class="col-md-8 col-md-push-4" style="padding-top:150px;"> 
+         <header>
+      
+         <img src="assets/logo/HF-Logo-Lndscape.jpg" class="img-responsive img-centered" alt="">
+          <div class="brand-name-subtext text-center">
         <a><br>
-        <% if @headlines.count >0 %>
-          <%if @headlines[0].url.blank? %>
-            <%= link_to @headlines[0].leadtext, "#" %></a>
+          <% if @headlines.count >0 %>
+            <%if @headlines[0].url.blank? %>
+              <%= link_to @headlines[0].leadtext, "#" %></a>
             <% else %>
-          <%= link_to @headlines[0].leadtext, @headlines[0].url %></a>
-          <% end%>
-          <% else %>
-          <% end %>
-        </div>
-      </div> 
-   
+              <%= link_to @headlines[0].leadtext, @headlines[0].url %></a>
+            <% end%>
+              <% else %>
+            <% end %>
+          </div> 
+        
+        <br><br><br> 
         <div class="scroll-down">
             <a class="btn page-scroll" href="#values"><i class="fa fa-angle-down fa-fw"></i></a>
         </div>
+        </header>
+      </div>  
+      
+
+  <!-- Header: Side Panel for marketing. -->
+      <div class="col-md-4 col-md-pull-8"> 
+    
+     <table class="table">
+     <tr><br>
+     </tr>
+     <tr>
+     <td>
+      <div class="text-center">
+     <br><br><br><br><br>
+            <%= image_tag("3set_retro.jpg", size: "250x300") %>
+            <br>
+            <br>
+            <h3>Hang Fire Sauces</h3>
+          <br>
+             <a href="http://www.amazon.co.uk/Bulls-Eye-BBQ-Sauce-Hickory-Smoke/dp/B000612XM6/ref=sr_1_1?ie=UTF8&qid=1436016681&sr=8-1&keywords=bbq+sauce" class="btn btn-outline-dark">Buy Now at Amazon</a>
+      </div>
+      </div>
+      </td>
+      </tr>
+   </table>
+    </div>
+    </div>
    </header>
     
   <!-- Instructions: This is the aside. -->
@@ -33,7 +63,7 @@
                 <div class="col-md-10 col-md-offset-1">
                     <span class="quote">Great barbecue takes time, love and a true understanding of the alchemy of smoke and meat.</span>
                     <hr class=" colored">
-                    <a class="btn btn-outline-light page-scroll" href="#where">Where to find us</a>
+                    <a class="btn btn-outline-light page-scroll" href="#where">Find us</a>
                 </div>
             </div>
         </div>
@@ -380,42 +410,65 @@
           </div>
           </div>
     </div>
-    </section>   
-  
+    </section>  
+    
+    <!-- Instructions: This is the aside. -->
+      <aside class="cta-quote" style="background-image: url('/assets/background/night_sign.jpg');">
+
+          <div class="container wow fadeIn">
+              <div class="row">
+                  <div class="col-md-10 col-md-offset-1">
+                     
+                  </div>
+              </div>
+          </div>
+      </aside>
+    
+    <!-- Instructions: This is the CONTACTb section. -->  
+    <section id="contact" class="services container-fluid text-center bg-gray">
+   <h2>Contact</h2>
+    <hr class="colored">
+    
+        <div class="row">
+        <div class="col-md-3 col-md-offset-2 wow fadeIn">
+         <br>
+         <ul class="list-inline">
+                   <li><a href="https://www.facebook.com/pages/Hang-Fire-Smokehouse/203591489778567"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+                   </li>
+                   <li><a href="https://twitter.com/hangfirebbq"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+                   </li>
+                   <li><a href="http://instagram.com/hangfirebbq"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
+                   </li>
+                   <li><a href="https://www.youtube.com/channel/UCM6UYsYUvLAzFZp7M4hCWWg"><i class="fa fa-youtube fa-fw fa-2x"></i></a>
+                   </li>
+               </ul>
+               <br>
+                  <a>We specialise in kitchen takeovers and street food. If you’d like to know where we are next, check out the ‘FIND US’ section of this website. 
+                  <br><br>However, if you want to get in touch, drop us a line using the contact form, and we’ll get back to you quicker than it takes to smoke a brisket!
+                  <br><br>Please note, we do not have a restaurant, and therefore cannot take table bookings.</a>
+                </div> 
+       
+          <div class="col-md-5">
+            <%= render 'contacts/new' %>
+            <br><br>
+          </div>
+    </div>
+    </section>     
+
+   
     <!-- Instructions: This is the CONTACT section. -->  
     <a href="http://www.amazon.co.uk/Bulls-Eye-BBQ-Sauce-Hickory-Smoke/dp/B000612XM6/ref=sr_1_1?ie=UTF8&qid=1436016681&sr=8-1&keywords=bbq+sauce" class="btn btn-block btn-full-width">Shop Hang Fire Smokehouse now!</a>
     <footer class="footer" style="background-image: url('assets/background/night_sign.jpg')">
        
-        <div class="container text-center">
-         <section id="contact">
-            <div class="row">
-            <h2>CONTACT</h2>
-            <hr class="colored">
-                <div class="col-md-4 contact-details">
-                    
-                <ul class="list-inline">
-                    <li><a href="https://www.facebook.com/pages/Hang-Fire-Smokehouse/203591489778567"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
-                    </li>
-                    <li><a href="https://twitter.com/hangfirebbq"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
-                    </li>
-                    <li><a href="http://instagram.com/hangfirebbq"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
-                    </li>
-                    <li><a href="https://www.youtube.com/channel/UCM6UYsYUvLAzFZp7M4hCWWg"><i class="fa fa-youtube fa-fw fa-2x"></i></a>
-                    </li>
-                </ul>
-                <br>
+    <div class="container text-center">
+     <section id="contact">
+        <div class="row">
        
-                   <a>We specialise in kitchen takeovers and street food. If you’d like to know where we are next, check out the ‘WHERE’ section of this website. However, if you want to get in touch, drop us a line using the contact form below, and we’ll get back to you quicker than it takes to smoke a brisket!
-                   <br>  <br>Please note, we do not have a restaurant, and therefore cannot take table bookings.</a>
-                      <br>
-                       <%= render 'contacts/new' %>
-                    <h4><i class="fa fa-envelope"></i> Email</h4>
-                      <p><a href="mailto:mail@example.com">hangfire@google.com</a>
-                      </p>
-                      <br>
-                </div>
-             
-             
+            <ul class="list-inline">
+             <br><br><br><br>
+            </ul>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            </div>  
             <div class="row copyright">
                 <div class="col-lg-12">
                     <p class="small">&copy; 2015 Start Bootstrap Themes/Hang Fire Smokehouse</p>
